@@ -1,3 +1,16 @@
+# ATIVIDADE 05
+
+lista = list(map(int, input("Digite os 5 numeros: ").split()))
+maior = 0
+
+for i in range(len(lista)):
+    if lista[i] > maior:
+        maior = lista[i]
+
+
+print(maior)
+
+
 # ATIVIDADE 03
 
 quant_musica = int(input("Digite a quantidade de músicas da sua playlist(DB): "))
