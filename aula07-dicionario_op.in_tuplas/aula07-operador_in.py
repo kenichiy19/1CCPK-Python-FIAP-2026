@@ -31,14 +31,30 @@ print()
 # Por exemplo, uma vantagem da implementação de dicionário é que não precisamos saber de antemão quais letras aparecem na string e só é preciso criar espaço para as letras qye realmente venham a aparecer.
 
 # CONTADOR
-def count_letters(s):
-    d = dict()
-    for c in s:
-        if c not in d:
-            d[c] = 1
-        else:
-            d[c] += 1
-    return d
+def count_letters(texto): # Define a função chamada 'count_letters' que recebe uma string 's' como parâmetro de entrada
+    frequencia = dict() # Cria um dicionário vazio, onde as chaves serão as letras e os valores serão a quantidade de vezes que cada letra aparece.
+    for letra in texto: # Percorre cada caractere 'c' presente na string 's', da esquerda para direita.
+        if letra not in frequencia: # Verifica se a letra ainda não está registrada no dicionário.
+            frequencia[letra] = 1 # Se for a primeira vez, ela é adicionada como chave com valor inicial 1.
+        else: # Caso já esteja no dicionário, é adicionado +1 no seu contador.
+            frequencia[letra] += 1
+    return frequencia # Ao percorrer todos os caracteres, a função retorna o dicionário preenchido.
 
 count = count_letters('abacaxi')
 print(count)
+
+# CONTADOR DE PALAVRAS
+def count_words(texto):
+    frequencia2 = dict()
+    palavras = texto.split()
+
+    for palavra in palavras:
+        if palavra not in frequencia2:
+            frequencia2[palavra] = 1
+        else:
+            frequencia2[palavra] += 1
+    return frequencia2
+
+frase = "o gato pulou o muro e o gato correu"
+contagem = count_words(frase)
+print(contagem)
